@@ -4,7 +4,7 @@ PortSystem          1.0
 
 name                gwyddion
 version             2.55
-revision            0
+revision            1
 categories          science x11
 platforms           darwin
 license             gpl-2
@@ -39,6 +39,8 @@ configure.args      --disable-desktop-file-update \
                     --with-x \
                     --x-includes=${prefix}/include \
                     --x-libraries=${prefix}/lib
+
+patchfiles          dynamic_lookup-11.patch
 
 variant quartz description { Build gwyddion with quartz gl support } {
     depends_lib-append    port:gtk-osx-application-gtk2
